@@ -4,228 +4,558 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Brand</title>
+    <title>Jadir Ibna Hasan — Senior Software Engineer | Python | Odoo</title>
+    <meta name="description" content="Jadir Ibna Hasan is a Senior Software Engineer based in Dhaka, Bangladesh, building reliable software with Python, Odoo, and thoughtful engineering.">
+    <meta name="author" content="Jadir Ibna Hasan">
+    <meta property="og:title" content="Jadir Ibna Hasan — Senior Software Engineer">
+    <meta property="og:description" content="Building reliable software with Python, Odoo, and thoughtful engineering.">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&amp;display=swap">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <script>
+        (function () {
+            var stored = localStorage.getItem("theme");
+            var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            document.documentElement.setAttribute("data-bs-theme", stored || (prefersDark ? "dark" : "light"));
+        })();
+    </script>
 </head>
 
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="72">
-    <nav class="navbar navbar-expand-lg fixed-top text-uppercase" id="mainNav" style="background: #406b74;padding-top: 7px;padding-bottom: 10px;">
-        <div class="container"><a class="navbar-brand" href="#page-top" style="color: #faf8eb;margin-left: 10px;">J.I.H Angkon</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler text-white bg-primary text-uppercase rounded" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+    <nav class="navbar navbar-expand-lg fixed-top text-uppercase" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">Jadir Ibna Hasan</a>
+            <button id="themeToggle" class="theme-toggle ms-auto me-2" aria-label="Toggle dark mode" title="Toggle dark mode"><i class="fa fa-moon-o"></i></button>
+            <button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler text-white rounded" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#experience">Experience</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#work">Work</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#skills">Skills</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#education">Education</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <header class="text-center text-white" style="padding-top: 139px;background: #faf8eb;margin-top: 56px;">
-        <div class="container" style="height: 662.391px;"><img class="img-fluid d-block mx-auto mb-5" data-aos="fade" data-aos-duration="1950" src="assets/img/Media2-modified.png">
-            <h1 style="color: #406b74;">Jadir Ibna Hasan</h1>
-            <hr data-aos="fade-up-right" data-aos-duration="1950" class="hr1">
-            <h2 class="fw-light mb-0" data-aos="fade-right" style="color: #406b74;margin-top: -12px;">Software Engineer | AI Enthusiast | Researcher</h2>
-            <div class="orgs"><img class="imgbs" src="assets/img/bs23_logo.webp"><img src="assets/img/BUET_LOGO.svg" class="imgbuet"><img class="imguiu" src="assets/img/header-logo.png"></div>
+
+    <!-- Hero -->
+    <header class="text-center hero">
+        <div class="container">
+            <img class="img-fluid d-block mx-auto mb-4 hero-avatar" data-aos="fade" data-aos-duration="1200" src="assets/img/Media2-modified.png" alt="Jadir Ibna Hasan">
+            <span class="hero-kicker" data-aos="fade-up" data-aos-delay="100">Dhaka, Bangladesh · Open to opportunities</span>
+            <h1 data-aos="fade-up" data-aos-delay="150">Jadir Ibna Hasan</h1>
+            <div class="hero-title" data-aos="fade-up" data-aos-delay="200">Senior Software Engineer | Python | Odoo</div>
+            <p class="hero-tagline mt-2" data-aos="fade-up" data-aos-delay="250">Build with clarity. Scale with confidence. Building reliable software with Python, Odoo, and thoughtful engineering.</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3 mt-4" data-aos="fade-up" data-aos-delay="300">
+                <a class="btn btn-ak" href="#work"><i class="fa fa-briefcase me-2"></i>Explore my work</a>
+                <a class="btn btn-ak-outline" href="assets/Resume.pdf" download><i class="fa fa-download me-2"></i>Download résumé</a>
+            </div>
+            <div class="row justify-content-center hero-stats" data-aos="fade-up" data-aos-delay="350">
+                <div class="col-6 col-md-3 mb-3 mb-md-0"><div class="stat-box"><div class="stat-num">5</div><div class="stat-label">Years in software</div></div></div>
+                <div class="col-6 col-md-3 mb-3 mb-md-0"><div class="stat-box"><div class="stat-num">14</div><div class="stat-label">Public projects</div></div></div>
+                <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num">7</div><div class="stat-label">Case studies</div></div></div>
+                <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num">6</div><div class="stat-label">Articles</div></div></div>
+            </div>
+            <div class="orgs" data-aos="fade-up" data-aos-delay="400">
+                <img class="imgbs" src="assets/img/bs23_logo.webp" alt="Brain Station 23">
+                <img class="imgbuet" src="assets/img/BUET_LOGO.svg" alt="BUET">
+                <img class="imguiu" src="assets/img/header-logo.png" alt="United International University">
+            </div>
         </div>
     </header>
-    <section id="portfolio" class="portfolio">
+
+    <!-- About -->
+    <section id="about" class="section">
         <div class="container">
-            <h2 class="text-uppercase text-center text-secondary">Portfolio</h2>
-            <hr class="star-dark mb-5">
-            <div class="row">
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-1" data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/cabin.png">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-2" data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/cake.png">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-3" data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/circus.png">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-4" data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/game.png">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-5" data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/safe.png">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-6" data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/submarine.png">
-                    </a></div>
+            <h2 class="text-uppercase text-center section-heading" style="color: var(--ak-accent);">About</h2>
+            <div class="divider text-center"><i class="fa fa-star"></i></div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <p class="section-sub">Engineering is a craft, not just an output. I turn ambiguous requirements into software that is understandable, testable, and built to evolve.</p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-2">
+                <div class="col-lg-5">
+                    <p class="about-para">Dedicated and results-oriented professional with extensive experience in architecting complex enterprise solutions. I enjoy turning complex requirements into dependable software and creating solutions that bring value and confidence to the people who use them.</p>
+                </div>
+                <div class="col-lg-5">
+                    <p class="about-para">My engineering work spans Odoo customization, Python services, databases, data collection, concurrent systems, and applied machine-learning. I care about systems that are understandable in production—not only prototypes that demonstrate a result once.</p>
+                </div>
+            </div>
+            <div class="row mt-4 g-3">
+                <div class="col-md-3"><div class="philosophy-card" data-aos="fade-up" data-aos-delay="0"><h5>Focus</h5><p>Reliable product engineering</p></div></div>
+                <div class="col-md-3"><div class="philosophy-card" data-aos="fade-up" data-aos-delay="80"><h5>Approach</h5><p>Ownership from design to delivery</p></div></div>
+                <div class="col-md-3"><div class="philosophy-card" data-aos="fade-up" data-aos-delay="160"><h5>Collaboration</h5><p>Clear communication, shared context</p></div></div>
+                <div class="col-md-3"><div class="philosophy-card" data-aos="fade-up" data-aos-delay="240"><h5>Learning</h5><p>Continuous, practical improvement</p></div></div>
             </div>
         </div>
     </section>
-    <section class="text-white mb-0" id="about" style="background: #406b74;">
+
+    <!-- Experience -->
+    <section id="experience" class="section" style="background: var(--ak-cream);">
         <div class="container">
-            <h2 class="text-uppercase text-center text-white">About</h2>
-            <hr class="star-light mb-5">
-            <div class="row">
-                <div class="col-lg-4 ms-auto">
-                    <p class="lead">Freelancer is a free bootstrap theme. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+            <h2 class="text-uppercase text-center section-heading" style="color: var(--ak-accent);">Experience</h2>
+            <div class="divider text-center"><i class="fa fa-star"></i></div>
+            <p class="text-center section-sub mb-5">Built through real engineering roles—a progression through database foundations, software systems, and senior Python/Odoo work.</p>
+            <div class="timeline mx-auto" style="max-width: 860px;">
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <span class="timeline-dot"></span>
+                    <div class="exp-card">
+                        <div class="exp-role">Senior Software Engineer <span class="exp-badge-current">Current</span></div>
+                        <div class="exp-company">Brain Station 23 · Dhaka, Bangladesh</div>
+                        <div class="exp-meta">Feb 2026 — Present · Full-time · On-site</div>
+                        <ul class="exp-list">
+                            <li>Mapping clients' business cases into deliverable features</li>
+                            <li>Breaking down large client requirements into WBS/PRD</li>
+                            <li>System design from problem statements and requirements</li>
+                            <li>Building software faster with Agentic AI and the team</li>
+                        </ul>
+                        <div class="tags"><span class="tag">Python</span><span class="tag">Odoo</span><span class="tag">PostgreSQL</span><span class="tag">System Design</span><span class="tag">Optimization</span><span class="tag">AI-driven Development</span><span class="tag">Docker</span><span class="tag">JavaScript</span></div>
+                    </div>
                 </div>
-                <div class="col-lg-4 me-auto">
-                    <p class="lead">Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <span class="timeline-dot"></span>
+                    <div class="exp-card">
+                        <div class="exp-role">Senior Software Engineer</div>
+                        <div class="exp-company">Newroz Technologies Limited · Dhaka, Bangladesh</div>
+                        <div class="exp-meta">May 2025 — Feb 2026 · Full-time</div>
+                        <ul class="exp-list">
+                            <li>Led an Odoo team</li>
+                        </ul>
+                        <div class="tags"><span class="tag">Python</span><span class="tag">Odoo</span><span class="tag">JavaScript</span><span class="tag">Docker</span></div>
+                    </div>
                 </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <span class="timeline-dot"></span>
+                    <div class="exp-card">
+                        <div class="exp-role">Software Engineer</div>
+                        <div class="exp-company">Brain Station 23 · Dhaka, Bangladesh</div>
+                        <div class="exp-meta">Jan 2024 — Apr 2025 · Full-time</div>
+                        <ul class="exp-list">
+                            <li>Developed Odoo ERP software using Odoo 13, 15 and 16 for several clients</li>
+                            <li>Learned to think through business owners' pain points and simplify ERP solutions</li>
+                        </ul>
+                        <div class="tags"><span class="tag">Odoo</span><span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">JavaScript</span><span class="tag">Redis</span><span class="tag">Kafka</span></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <span class="timeline-dot"></span>
+                    <div class="exp-card">
+                        <div class="exp-role">Associate Software Engineer</div>
+                        <div class="exp-company">Brain Station 23 · Dhaka, Bangladesh</div>
+                        <div class="exp-meta">Feb 2022 — Jan 2024 · Full-time</div>
+                        <ul class="exp-list">
+                            <li>Built practical experience across Python and optimizing database systems for clients with large operations</li>
+                        </ul>
+                        <div class="tags"><span class="tag">Odoo</span><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">PostgreSQL</span><span class="tag">Nginx</span><span class="tag">Load Balancing</span></div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <span class="timeline-dot"></span>
+                    <div class="exp-card">
+                        <div class="exp-role">Software Engineer Intern</div>
+                        <div class="exp-company">Brain Station 23 · Dhaka, Bangladesh</div>
+                        <div class="exp-meta">Oct 2021 — Jan 2022 · Full-time</div>
+                        <ul class="exp-list">
+                            <li>Learned Odoo ERP</li>
+                            <li>Worked on lots of business cases</li>
+                            <li>Learned Odoo Accounting</li>
+                        </ul>
+                        <div class="tags"><span class="tag">Python</span><span class="tag">Odoo</span><span class="tag">PostgreSQL</span></div>
+                    </div>
+                </div>
+
             </div>
-            <div class="text-center mt-4"><a class="btn btn-outline-light btn-xl" role="button" href="#"><i class="fa fa-download me-2"></i><span>Download Now!</span></a></div>
         </div>
     </section>
-    <section id="contact"></section>
-    <footer class="text-center footer" style="background: #1f2231;">
+
+    <!-- Work -->
+    <section id="work" class="section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">Location</h4>
-                    <p>2215 John Daniel Drive<br>Clark, MO 65243</p>
+            <h2 class="text-uppercase text-center section-heading" style="color: var(--ak-accent);">Selected Work</h2>
+            <div class="divider text-center"><i class="fa fa-star"></i></div>
+            <p class="text-center section-sub mb-5">Projects with a purpose—products, systems, coursework, and experiments documented with the problem, decisions, and evidence.</p>
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <a class="work-card" href="#work-modal-1" data-bs-toggle="modal">
+                        <div class="work-thumb grad-1">
+                            <span class="work-index">Project / 01</span>
+                            <i class="fa fa-cutlery work-icon"></i>
+                            <span class="work-role-badge">Project Lead</span>
+                        </div>
+                        <div class="work-body">
+                            <h5>Santhai Malay Restaurant Odoo Solution</h5>
+                            <p>An Odoo restaurant solution covering POS ordering, self-service ordering, billing, and reporting.</p>
+                            <div class="tags"><span class="tag">Odoo</span><span class="tag">Point of Sale</span><span class="tag">Reporting</span></div>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-4 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase">Around the Web</h4>
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><a class="btn btn-outline-light text-center btn-social rounded-circle" role="button" href="#"><i class="fa fa-facebook fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a class="btn btn-outline-light text-center btn-social rounded-circle" role="button" href="#"><i class="fa fa-google-plus fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a class="btn btn-outline-light text-center btn-social rounded-circle" role="button" href="#"><i class="fa fa-twitter fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a class="btn btn-outline-light text-center btn-social rounded-circle" role="button" href="#"><i class="fa fa-dribbble fa-fw"></i></a></li>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
+                    <a class="work-card" href="#work-modal-2" data-bs-toggle="modal">
+                        <div class="work-thumb grad-2">
+                            <span class="work-index">Project / 02</span>
+                            <i class="fa fa-building-o work-icon"></i>
+                            <span class="work-role-badge">Lead Developer</span>
+                        </div>
+                        <div class="work-body">
+                            <h5>Bangladesh Special Economic Zone ERP</h5>
+                            <p>A customized Odoo ERP solution with extensive accounting and operational workflow extensions.</p>
+                            <div class="tags"><span class="tag">Odoo</span><span class="tag">Accounting</span><span class="tag">Inventory</span><span class="tag">IoT Billing</span></div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
+                    <a class="work-card" href="#work-modal-3" data-bs-toggle="modal">
+                        <div class="work-thumb grad-3">
+                            <span class="work-index">Project / 03</span>
+                            <i class="fa fa-industry work-icon"></i>
+                            <span class="work-role-badge">Developer & Client Liaison</span>
+                        </div>
+                        <div class="work-body">
+                            <h5>Matrix Finishes ERP</h5>
+                            <p>A full ERP implementation featuring extensive report customization and attendance automation.</p>
+                            <div class="tags"><span class="tag">Odoo</span><span class="tag">ERP</span><span class="tag">Reporting</span><span class="tag">Attendance Automation</span></div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
+                    <a class="work-card" href="#work-modal-4" data-bs-toggle="modal">
+                        <div class="work-thumb grad-4">
+                            <span class="work-index">Project / 04</span>
+                            <i class="fa fa-line-chart work-icon"></i>
+                            <span class="work-role-badge">Sole Developer</span>
+                        </div>
+                        <div class="work-body">
+                            <h5>Rahimafroz Neo Ventures Sales Automation</h5>
+                            <p>An Odoo sales-automation project with fully automated Bangladesh NBR Mushok reporting.</p>
+                            <div class="tags"><span class="tag">Odoo</span><span class="tag">Sales Automation</span><span class="tag">NBR Mushok Reporting</span></div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
+                    <a class="work-card" href="#work-modal-5" data-bs-toggle="modal">
+                        <div class="work-thumb grad-5">
+                            <span class="work-index">Project / 05</span>
+                            <i class="fa fa-database work-icon"></i>
+                            <span class="work-role-badge">Researcher</span>
+                        </div>
+                        <div class="work-body">
+                            <h5>Distributed Storage Systems Analysis</h5>
+                            <p>An academic analysis of distributed and partitioned cloud storage architectures, scalability, and consistency.</p>
+                            <div class="tags"><span class="tag">Apache Spark</span><span class="tag">Python</span><span class="tag">DynamoDB</span><span class="tag">Cassandra</span></div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
+                    <a class="work-card" href="#work-modal-6" data-bs-toggle="modal">
+                        <div class="work-thumb grad-6">
+                            <span class="work-index">Project / 06</span>
+                            <i class="fa fa-cogs work-icon"></i>
+                            <span class="work-role-badge">Researcher</span>
+                        </div>
+                        <div class="work-body">
+                            <h5>Garbage-Collected vs Managed Memory</h5>
+                            <p>An experimental master's coursework project comparing memory-management behavior in Python and Rust.</p>
+                            <div class="tags"><span class="tag">Python</span><span class="tag">Rust</span><span class="tag">Memory Management</span><span class="tag">Profiling</span></div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section section-dark">
+        <div class="container">
+            <h2 class="text-uppercase text-center section-heading">Skills</h2>
+            <div class="divider divider-light text-center"><i class="fa fa-star"></i></div>
+            <p class="text-center section-sub mb-5">Where I create value—from business workflows and data systems to interfaces that make complex software understandable.</p>
+            <div class="row g-4 mb-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up"><div class="cap-card"><div class="cap-num">01</div><h5>Python Engineering</h5><p>Designing and maintaining Python applications with clear domain boundaries and reliable data access.</p><div class="tags"><span class="tag">Python</span><span class="tag">Package Manager</span></div></div></div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="80"><div class="cap-card"><div class="cap-num">02</div><h5>Odoo Development</h5><p>Extending Odoo from the ORM through security, server-side workflows, views, and focused JavaScript experiences.</p><div class="tags"><span class="tag">Odoo</span><span class="tag">Python</span></div></div></div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="160"><div class="cap-card"><div class="cap-num">03</div><h5>Data &amp; System Design</h5><p>Building data-aware systems around databases, collection pipelines, Redis, and Python concurrency.</p><div class="tags"><span class="tag">Data Engineering</span><span class="tag">Databases</span><span class="tag">Redis</span><span class="tag">Multithreading</span></div></div></div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="240"><div class="cap-card"><div class="cap-num">04</div><h5>ERP System Design</h5><p>An ERP isn't predefined software—a proper, simple design comes through brainstorming and leveraging AI.</p><div class="tags"><span class="tag">Odoo</span><span class="tag">AI</span></div></div></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up"><div class="skill-group"><h6>Backend &amp; Frameworks</h6><p class="skill-sub">Application architecture and business systems</p><div class="tags"><span class="tag">Python</span><span class="tag">Odoo</span></div></div></div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80"><div class="skill-group"><h6>Data &amp; Systems</h6><p class="skill-sub">Persistence, pipelines, and concurrent execution</p><div class="tags"><span class="tag">Data Engineering</span><span class="tag">Databases</span><span class="tag">Redis</span><span class="tag">Multithreading</span></div></div></div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160"><div class="skill-group"><h6>Web, Languages &amp; AI</h6><p class="skill-sub">Interfaces, APIs, foundations, and applied AI</p><div class="tags"><span class="tag">HTML5</span><span class="tag">C</span><span class="tag">JavaScript</span><span class="tag">Docker</span><span class="tag">Kafka</span><span class="tag">Nginx</span></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Credentials -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="text-uppercase text-center section-heading" style="color: var(--ak-accent);">Education &amp; Recognition</h2>
+            <div class="divider text-center"><i class="fa fa-star"></i></div>
+            <div class="row g-4 mb-4">
+                <div class="col-md-6" data-aos="fade-up">
+                    <div class="edu-card">
+                        <h5>Bangladesh University of Engineering and Technology</h5>
+                        <div class="edu-degree">MSc · Computer Science</div>
+                        <p class="mb-1" style="color: var(--ak-muted);">Postgraduate study in Computer Science with coursework in Python and multithreading.</p>
+                        <div class="tags mt-2"><span class="tag">Python</span><span class="tag">Multithreading</span></div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="80">
+                    <div class="edu-card">
+                        <h5>United International University</h5>
+                        <div class="edu-degree">Bachelor of Science (BS) · Computer Science</div>
+                        <p class="mb-1" style="color: var(--ak-muted);">Dec 2021 · Grade 3.90 — Active member of the UIU App Forum.</p>
+                        <div class="tags mt-2"><span class="tag">Python</span><span class="tag">C</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up"><div class="credential-item"><i class="fa fa-github"></i><div><h6>GitHub Pull Shark</h6><p>Recognized for pull-request contribution activity.</p></div></div></div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="80"><div class="credential-item"><i class="fa fa-archive"></i><div><h6>Arctic Code Vault Contributor</h6><p>Code preserved in the GitHub Arctic Code Vault program.</p></div></div></div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="160"><div class="credential-item"><i class="fa fa-database"></i><div><h6>DataCamp</h6><p>Understanding Data Engineering · Jan 2025</p></div></div></div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="240"><div class="credential-item"><i class="fa fa-cloud"></i><div><h6>IBM</h6><p>Introduction to Cloud Computing · Apr 2021</p></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section" style="background: var(--ak-cream);">
+        <div class="container">
+            <h2 class="text-uppercase text-center section-heading" style="color: var(--ak-accent);">Contact</h2>
+            <div class="divider text-center"><i class="fa fa-star"></i></div>
+            <p class="text-center section-sub mb-5">Have a hard problem worth solving? Tell me what you're building, where the complexity lives, and what good looks like.</p>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-5">
+                    <div class="contact-panel h-100">
+                        <a class="contact-info-item" href="mailto:jadiribnahasan@gmail.com"><span class="contact-icon"><i class="fa fa-envelope"></i></span><span>jadiribnahasan@gmail.com</span></a>
+                        <a class="contact-info-item" href="tel:+8801815158831"><span class="contact-icon"><i class="fa fa-phone"></i></span><span>+880 1815158831</span></a>
+                        <a class="contact-info-item" href="https://github.com/jadiribnahasan" target="_blank" rel="noopener"><span class="contact-icon"><i class="fa fa-github"></i></span><span>github.com/jadiribnahasan</span></a>
+                        <a class="contact-info-item" href="https://bd.linkedin.com/in/jadiribnahasan" target="_blank" rel="noopener"><span class="contact-icon"><i class="fa fa-linkedin"></i></span><span>linkedin.com/in/jadiribnahasan</span></a>
+                        <a class="contact-info-item" href="https://angkon.cloud" target="_blank" rel="noopener"><span class="contact-icon"><i class="fa fa-globe"></i></span><span>angkon.cloud</span></a>
+                        <a class="contact-info-item" href="#"><span class="contact-icon"><i class="fa fa-map-marker"></i></span><span>Dhaka, Bangladesh</span></a>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="contact-panel">
+                        <!-- To make this form live, create a free form at https://formspree.io and
+                             replace the endpoint below with your own, e.g. https://formspree.io/f/xxxxyyyy -->
+                        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold" for="name">Name</label>
+                                    <input class="form-control" type="text" id="name" name="name" placeholder="Your name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold" for="email">Email</label>
+                                    <input class="form-control" type="email" id="email" name="email" placeholder="you@example.com" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-bold" for="subject">Subject</label>
+                                    <input class="form-control" type="text" id="subject" name="subject" placeholder="What is this about?">
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-bold" for="message">Message</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell me what you're building..." required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-ak" type="submit"><i class="fa fa-paper-plane me-2"></i>Send message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 mb-4 mb-lg-0">
+                    <h5 class="mb-3">Location</h5>
+                    <p class="mb-0" style="color: rgba(255,255,255,0.82);">Dhaka, Bangladesh</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-lg-0">
+                    <h5 class="mb-3">Around the Web</h5>
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a class="btn-social" role="button" href="https://github.com/jadiribnahasan" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa fa-github fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a class="btn-social" role="button" href="https://bd.linkedin.com/in/jadiribnahasan" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a class="btn-social" role="button" href="mailto:jadiribnahasan@gmail.com" aria-label="Email"><i class="fa fa-envelope fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a class="btn-social" role="button" href="https://angkon.cloud" target="_blank" rel="noopener" aria-label="Website"><i class="fa fa-globe fa-fw"></i></a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
-                    <h4 class="text-uppercase mb-4">About Freelancer</h4>
-                    <p class="lead mb-0"><span>Freelance is a free to use, open source Bootstrap theme.&nbsp;</span></p>
+                    <h5 class="mb-3">About</h5>
+                    <p class="mb-0" style="color: rgba(255,255,255,0.82);">Building dependable software, sharing what I learn, and turning complex problems into clear systems.</p>
                 </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Jadir Ibna Hasan. All rights reserved.</span>
             </div>
         </div>
     </footer>
-    <div class="d-lg-none scroll-to-top position-fixed rounded"><a class="text-center d-block rounded text-white" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
-    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-1">
-        <div class="modal-dialog modal-lg" role="document">
+
+    <div class="scroll-to-top position-fixed rounded" id="scrollTop"><a class="text-center d-block rounded text-white" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+
+    <!-- Work modals -->
+    <div class="modal fade text-center" role="dialog" tabindex="-1" id="work-modal-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
-                <div class="modal-body">
+                <div class="modal-header border-0"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body pt-0">
                     <div class="container text-center">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
-                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="assets/img/portfolio/cabin.png">
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            </div>
-                        </div>
+                        <div class="work-thumb grad-1 mb-4" style="border-radius:14px;height:150px;"><i class="fa fa-cutlery work-icon"></i></div>
+                        <span class="work-index text-uppercase" style="color:var(--ak-plum);">Project / 01 · Project Lead</span>
+                        <h3 class="text-uppercase mt-2 mb-3" style="color: var(--ak-accent);">Santhai Malay Restaurant Odoo Solution</h3>
+                        <p class="text-start">An Odoo restaurant solution covering POS ordering, self-service ordering, billing, and reporting. Built end-to-end to streamline front-of-house ordering and back-office reporting for a restaurant operation.</p>
+                        <div class="tags justify-content-center mt-3"><span class="tag">Odoo</span><span class="tag">Point of Sale</span><span class="tag">Reporting</span></div>
                     </div>
                 </div>
-                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+                <div class="modal-footer pb-5 border-0 justify-content-center"><a class="btn btn-ak-outline mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close me-2"></i>Close</a></div>
             </div>
         </div>
     </div>
-    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-2">
-        <div class="modal-dialog modal-lg" role="document">
+
+    <div class="modal fade text-center" role="dialog" tabindex="-1" id="work-modal-2">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
-                <div class="modal-body">
+                <div class="modal-header border-0"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body pt-0">
                     <div class="container text-center">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
-                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="assets/img/portfolio/cake.png">
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            </div>
-                        </div>
+                        <div class="work-thumb grad-2 mb-4" style="border-radius:14px;height:150px;"><i class="fa fa-building-o work-icon"></i></div>
+                        <span class="work-index text-uppercase" style="color:var(--ak-plum);">Project / 02 · Lead Developer</span>
+                        <h3 class="text-uppercase mt-2 mb-3" style="color: var(--ak-accent);">Bangladesh Special Economic Zone ERP</h3>
+                        <p class="text-start">A customized Odoo ERP solution with extensive accounting and operational workflow extensions, tailored to the needs of a special economic zone.</p>
+                        <div class="tags justify-content-center mt-3"><span class="tag">Odoo</span><span class="tag">Accounting</span><span class="tag">Inventory</span><span class="tag">Purchase</span><span class="tag">Project Management</span><span class="tag">IoT Billing</span></div>
                     </div>
                 </div>
-                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+                <div class="modal-footer pb-5 border-0 justify-content-center"><a class="btn btn-ak-outline mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close me-2"></i>Close</a></div>
             </div>
         </div>
     </div>
-    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-3">
-        <div class="modal-dialog modal-lg" role="document">
+
+    <div class="modal fade text-center" role="dialog" tabindex="-1" id="work-modal-3">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
-                <div class="modal-body">
+                <div class="modal-header border-0"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body pt-0">
                     <div class="container text-center">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
-                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="assets/img/portfolio/circus.png">
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            </div>
-                        </div>
+                        <div class="work-thumb grad-3 mb-4" style="border-radius:14px;height:150px;"><i class="fa fa-industry work-icon"></i></div>
+                        <span class="work-index text-uppercase" style="color:var(--ak-plum);">Project / 03 · Developer & Client Liaison</span>
+                        <h3 class="text-uppercase mt-2 mb-3" style="color: var(--ak-accent);">Matrix Finishes ERP</h3>
+                        <p class="text-start">A full ERP implementation featuring extensive report customization and attendance automation for a manufacturing and finishing company.</p>
+                        <div class="tags justify-content-center mt-3"><span class="tag">Odoo</span><span class="tag">ERP</span><span class="tag">Reporting</span><span class="tag">Attendance Automation</span></div>
                     </div>
                 </div>
-                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+                <div class="modal-footer pb-5 border-0 justify-content-center"><a class="btn btn-ak-outline mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close me-2"></i>Close</a></div>
             </div>
         </div>
     </div>
-    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-4">
-        <div class="modal-dialog modal-lg" role="document">
+
+    <div class="modal fade text-center" role="dialog" tabindex="-1" id="work-modal-4">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
-                <div class="modal-body">
+                <div class="modal-header border-0"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body pt-0">
                     <div class="container text-center">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
-                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="assets/img/portfolio/game.png">
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            </div>
-                        </div>
+                        <div class="work-thumb grad-4 mb-4" style="border-radius:14px;height:150px;"><i class="fa fa-line-chart work-icon"></i></div>
+                        <span class="work-index text-uppercase" style="color:var(--ak-plum);">Project / 04 · Sole Developer</span>
+                        <h3 class="text-uppercase mt-2 mb-3" style="color: var(--ak-accent);">Rahimafroz Neo Ventures Sales Automation</h3>
+                        <p class="text-start">An Odoo sales-automation project with fully automated Bangladesh NBR Mushok reporting, delivering compliant sales documentation without manual effort.</p>
+                        <div class="tags justify-content-center mt-3"><span class="tag">Odoo</span><span class="tag">Sales Automation</span><span class="tag">NBR Mushok Reporting</span></div>
                     </div>
                 </div>
-                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+                <div class="modal-footer pb-5 border-0 justify-content-center"><a class="btn btn-ak-outline mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close me-2"></i>Close</a></div>
             </div>
         </div>
     </div>
-    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-5">
-        <div class="modal-dialog modal-lg" role="document">
+
+    <div class="modal fade text-center" role="dialog" tabindex="-1" id="work-modal-5">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
-                <div class="modal-body">
+                <div class="modal-header border-0"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body pt-0">
                     <div class="container text-center">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
-                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="assets/img/portfolio/safe.png">
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            </div>
-                        </div>
+                        <div class="work-thumb grad-5 mb-4" style="border-radius:14px;height:150px;"><i class="fa fa-database work-icon"></i></div>
+                        <span class="work-index text-uppercase" style="color:var(--ak-plum);">Project / 05 · Researcher</span>
+                        <h3 class="text-uppercase mt-2 mb-3" style="color: var(--ak-accent);">Distributed Storage Systems Analysis</h3>
+                        <p class="text-start">An academic analysis of distributed and partitioned cloud storage architectures, scalability, and consistency trade-offs.</p>
+                        <div class="tags justify-content-center mt-3"><span class="tag">Apache Spark</span><span class="tag">Python</span><span class="tag">Java</span><span class="tag">DynamoDB</span><span class="tag">Cassandra</span><span class="tag">HDFS</span></div>
                     </div>
                 </div>
-                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+                <div class="modal-footer pb-5 border-0 justify-content-center"><a class="btn btn-ak-outline mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close me-2"></i>Close</a></div>
             </div>
         </div>
     </div>
-    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-6">
-        <div class="modal-dialog modal-lg" role="document">
+
+    <div class="modal fade text-center" role="dialog" tabindex="-1" id="work-modal-6">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
-                <div class="modal-body">
+                <div class="modal-header border-0"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body pt-0">
                     <div class="container text-center">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
-                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="assets/img/portfolio/submarine.png">
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            </div>
-                        </div>
+                        <div class="work-thumb grad-6 mb-4" style="border-radius:14px;height:150px;"><i class="fa fa-cogs work-icon"></i></div>
+                        <span class="work-index text-uppercase" style="color:var(--ak-plum);">Project / 06 · Researcher</span>
+                        <h3 class="text-uppercase mt-2 mb-3" style="color: var(--ak-accent);">Garbage-Collected vs Managed Memory</h3>
+                        <p class="text-start">An experimental master's coursework project comparing memory-management behavior in Python and Rust, with performance testing and profiling.</p>
+                        <div class="tags justify-content-center mt-3"><span class="tag">Python</span><span class="tag">Rust</span><span class="tag">Memory Management</span><span class="tag">Performance Testing</span><span class="tag">Profiling</span></div>
                     </div>
                 </div>
-                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+                <div class="modal-footer pb-5 border-0 justify-content-center"><a class="btn btn-ak-outline mx-auto rounded-pill" role="button" data-bs-dismiss="modal"><i class="fa fa-close me-2"></i>Close</a></div>
             </div>
         </div>
     </div>
+
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/script.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var scrollTop = document.getElementById("scrollTop");
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    scrollTop.classList.add("show");
+                } else {
+                    scrollTop.classList.remove("show");
+                }
+            });
+
+            var themeToggle = document.getElementById("themeToggle");
+            var themeIcon = themeToggle.querySelector("i");
+
+            function refreshThemeIcon() {
+                var dark = document.documentElement.getAttribute("data-bs-theme") === "dark";
+                themeIcon.className = dark ? "fa fa-sun-o" : "fa fa-moon-o";
+                themeToggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+            }
+
+            refreshThemeIcon();
+
+            themeToggle.addEventListener("click", function () {
+                var current = document.documentElement.getAttribute("data-bs-theme");
+                var next = current === "dark" ? "light" : "dark";
+                document.documentElement.setAttribute("data-bs-theme", next);
+                localStorage.setItem("theme", next);
+                refreshThemeIcon();
+            });
+        });
+    </script>
 </body>
 
 </html>
