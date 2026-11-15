@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Using Odoo's --db_replica_host for a High-Availability Database — Jadir Ibna Hasan</title>
+    <meta name="description" content="How read replicas, Odoo 20 database controls, and a reliable PostgreSQL topology work together.">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&amp;display=swap">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <script>
+        (function () {
+            var stored = localStorage.getItem("theme");
+            var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            document.documentElement.setAttribute("data-bs-theme", stored || (prefersDark ? "dark" : "light"));
+        })();
+    </script>
+</head>
+
+<body id="page-top">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="navbar navbar-expand-lg fixed-top text-uppercase" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Jadir Ibna Hasan</a>
+            <button id="themeToggle" class="theme-toggle ms-auto me-2" aria-label="Toggle dark mode" title="Toggle dark mode"><i class="fa fa-moon-o"></i></button>
+            <button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler text-white rounded" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="../index.html#about">About</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="../index.html#experience">Experience</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="../index.html#work">Work</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="../index.html#skills">Skills</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="index.html">Writing</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <header class="article-hero text-center">
+            <div class="container">
+                <a class="back-link" href="index.html"><i class="fa fa-arrow-left me-1"></i>All writing</a>
+                <div class="mt-3"><span class="article-kicker">Engineering article · #DevOps</span></div>
+                <h1 class="article-title">Using Odoo's --db_replica_host for a High-Availability Database</h1>
+                <p class="article-sub">How read replicas, Odoo 20 database controls, and a reliable PostgreSQL topology work together.</p>
+                <div class="article-meta">Sep 2026 · 5 min read</div>
+                <div class="tags justify-content-center mt-3"><span class="tag">DevOps</span><span class="tag">Odoo</span><span class="tag">Production</span></div>
+            </div>
+        </header>
+
+        <article class="article-body">
+            <p>Odoo's <code>--db_replica_host</code> connects <strong>read-only Odoo requests</strong> to a PostgreSQL replica while writes continue on the primary database. In a high-availability design, it can reduce load on the writer and let database reads continue through separate replica nodes.</p>
+            <p>It does not create a replica, manage failover, or replace backups. PostgreSQL tooling or your cloud database service must provide those parts. Odoo only tells the application where to find the read-only database endpoint.</p>
+
+            <h2>What does --db_replica_host do?</h2>
+            <p>Without this option, Odoo uses the normal <code>--db_host</code> for both reads and writes. When a replica host is configured, Odoo opens a separate read-only connection pool for controller routes explicitly marked as read-only.</p>
+            <pre><code>Normal traffic
+Read or write ───────────────► PostgreSQL primary
+
+With --db_replica_host
+Read-only route ─────────────► PostgreSQL replica
+Write route ────────────────► PostgreSQL primary
+Replica unavailable ───────► fallback to primary</code></pre>
+
+            <p>The replica uses the same Odoo database name. It inherits the database user, password, and SSL mode from the primary settings unless the corresponding <code>db_replica_*</code> option overrides them.</p>
+
+            <h2>Configuration</h2>
+            <p>The option can be supplied on the command line, in the Odoo configuration file, or through <code>PGHOST_REPLICA</code>.</p>
+            <pre><code># Odoo command line
+odoo-bin --db_host=postgres-primary.internal \
+         --db_replica_host=postgres-read.internal \
+         --db_port=5432</code></pre>
+            <pre><code>[options]
+db_host = postgres-primary.internal
+db_replica_host = postgres-read.internal
+db_port = 5432
+db_replica_port = 5432</code></pre>
+
+            <p>If <code>db_replica_port</code> is omitted, Odoo uses the primary database port. In Docker or Kubernetes, use environment variables such as <code>PGHOST</code> and <code>PGHOST_REPLICA</code> instead of storing credentials in a committed configuration file.</p>
+
+            <h2>How requests behave</h2>
+            <table>
+                <thead><tr><th>Situation</th><th>Odoo behavior</th></tr></thead>
+                <tbody>
+                    <tr><td>Route is marked read-only</td><td>Odoo attempts to use the replica connection.</td></tr>
+                    <tr><td>Route writes data</td><td>Odoo uses the primary connection.</td></tr>
+                    <tr><td>Replica cannot be reached</td><td>Odoo falls back to the primary and temporarily avoids repeatedly retrying the failed replica.</td></tr>
+                    <tr><td>Read-only route unexpectedly writes</td><td>Odoo logs the problem and retries on the primary.</td></tr>
+                </tbody>
+            </table>
+            <p>Only HTTP controller routes marked read-only use this feature. Most backend screens, forms, actions, and scheduled jobs include writes and should remain on the primary.</p>
+            <p>Replication can be slightly behind the primary. A user may therefore see old data if a page is served from the replica immediately after a write. Avoid replica routing for confirmation pages, checkout validation, inventory confirmation, and other read-after-write flows unless your consistency design handles that delay.</p>
+
+            <h2>A recommended high-availability topology</h2>
+            <pre><code>                       ┌─────────────────────┐
+                       │ Load balancer       │
+                       └──────────┬──────────┘
+                                  │
+                     ┌────────────┴────────────┐
+                     ▼                         ▼
+                Odoo node 1                 Odoo node 2
+                     │                         │
+          ┌──────────┴─────────────────────────┴──────────┐
+          │                                             │
+          ▼                                             ▼
+ PostgreSQL primary                              PostgreSQL replicas
+ read + writes                                   read-only traffic
+          │                                             │
+          └──────── replication and monitoring ─────────┘
+
+ All Odoo nodes also need shared filestore access.
+ Database and filestore backups run separately.</code></pre>
+
+            <p>For high availability, point <code>db_host</code> to a highly available <strong>writer endpoint</strong>, not directly to one PostgreSQL node. Point <code>db_replica_host</code> to a <strong>read endpoint</strong> that can distribute or fail over between replicas. Managed PostgreSQL services, Patroni, HAProxy, PgBouncer, or an equivalent platform can provide these endpoints.</p>
+            <p>Odoo 20 supports one <code>db_replica_host</code> value. Multiple replicas can still be used behind one read endpoint, so Odoo does not need a list of replica addresses.</p>
+
+            <h2>What must be handled outside Odoo</h2>
+            <ul>
+                <li><strong>Replication:</strong> configure physical streaming replication or the replication model offered by your database provider.</li>
+                <li><strong>Automatic failover:</strong> promote another PostgreSQL node and update the writer endpoint when the primary fails.</li>
+                <li><strong>Connection limits:</strong> calculate the total allowed by PostgreSQL across all Odoo nodes, worker processes, cron workers, administration tools, and replicas.</li>
+                <li><strong>Security:</strong> allow the Odoo network to reach both endpoints and require TLS where the database crosses hosts.</li>
+                <li><strong>Monitoring:</strong> track replication lag, connection saturation, primary health, disk space, and replica availability.</li>
+                <li><strong>Shared files:</strong> PostgreSQL replication does not replicate the Odoo filestore. Store attachments in shared or object-based storage and include them in recovery planning.</li>
+                <li><strong>Backups:</strong> a replica is not a backup. Use tested point-in-time recovery and periodically verify database and filestore restoration.</li>
+            </ul>
+
+            <h2>Test it before production</h2>
+            <p>Use <code>--dev=replica</code> in a development environment to simulate read-only routing without building a second server. This can expose controllers that were incorrectly marked read-only, but it cannot test replication lag or real failover.</p>
+            <p>For a production rehearsal, verify these cases:</p>
+            <ol>
+                <li>Read-only traffic reaches the replica.</li>
+                <li>Writes always reach the primary.</li>
+                <li>Odoo falls back cleanly when the replica is stopped.</li>
+                <li>Read-after-write workflows do not expose unacceptable stale data.</li>
+                <li>A primary failover reconnects through the writer endpoint.</li>
+                <li>Replicas do not exhaust PostgreSQL connection limits.</li>
+                <li>Database and filestore backups can be restored together.</li>
+            </ol>
+
+            <h2>What database approaches are actually new in Odoo 20?</h2>
+            <p>One important correction: <code>--db_replica_host</code> is <strong>not completely new to Odoo 20</strong>. It is already present in the Odoo 19 code and documentation. Odoo 20 continues and expands this architecture, but older Odoo deployments can already use the option.</p>
+            <p>The database-management changes that are new or newly important in Odoo 20 are:</p>
+            <table>
+                <thead><tr><th>Odoo 20 approach</th><th>What it improves</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>PostgreSQL 16 minimum</strong></td><td>A newer supported database baseline with current PostgreSQL fixes and capabilities.</td></tr>
+                    <tr><td><strong>Replica-aware request routing</strong></td><td>Separates eligible reads from writes and exposes whether a request used a read-only or read/write cursor.</td></tr>
+                    <tr><td><strong><code>--db-system</code></strong></td><td>A configurable system database for shared bus and maintenance operations. Keeping these operations separate can reduce noise in business databases and simplify architecture.</td></tr>
+                    <tr><td><strong>Cursor-mode diagnostics</strong></td><td>Odoo 20 can highlight <code>ro</code>, <code>rw</code>, and <code>ro-&gt;rw</code> access, helping operators find misclassified routes and unexpected primary traffic.</td></tr>
+                    <tr><td><strong><code>pgvector</code> integration</strong></td><td>Supports database-backed vector search for Odoo AI features. PostgreSQL 16 satisfies the extension version requirement.</td></tr>
+                </tbody>
+            </table>
+
+            <h2>Bottom line</h2>
+            <p>Use <code>--db_replica_host</code> as one part of a larger high-availability design. PostgreSQL replication provides the copy, the writer and read endpoints provide availability, and Odoo routes only safe read-only requests to the replica. Combined with Odoo 20's PostgreSQL 16 baseline, configurable system database, and better cursor diagnostics, it provides a stronger database platform without hiding the operational work behind a single option.</p>
+
+            <h2>References</h2>
+            <ul>
+                <li><a href="https://www.odoo.com/documentation/20.0/developer/reference/cli.html" target="_blank" rel="noopener">Odoo 20 command-line reference</a></li>
+                <li><a href="https://www.odoo.com/documentation/20.0/administration/on_premise/source.html" target="_blank" rel="noopener">Odoo 20 source installation requirements</a></li>
+                <li><a href="https://www.postgresql.org/docs/current/high-availability.html" target="_blank" rel="noopener">PostgreSQL high-availability documentation</a></li>
+            </ul>
+
+            <div class="article-footer">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a class="back-link" href="index.html"><i class="fa fa-arrow-left me-1"></i>All writing</a>
+                    <a class="btn btn-ak-outline" href="mailto:jadiribnahasan@gmail.com"><i class="fa fa-envelope me-2"></i>Discuss this article</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 mb-4 mb-lg-0">
+                    <h5 class="mb-3">Location</h5>
+                    <p class="mb-0" style="color: rgba(255,255,255,0.82);">Dhaka, Bangladesh</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-lg-0">
+                    <h5 class="mb-3">Around the Web</h5>
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a class="btn-social" role="button" href="https://github.com/jadiribnahasan" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa fa-github fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a class="btn-social" role="button" href="https://bd.linkedin.com/in/jadiribnahasan" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a class="btn-social" role="button" href="mailto:jadiribnahasan@gmail.com" aria-label="Email"><i class="fa fa-envelope fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a class="btn-social" role="button" href="https://angkon.cloud" target="_blank" rel="noopener" aria-label="Website"><i class="fa fa-globe fa-fw"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3">About</h5>
+                    <p class="mb-0" style="color: rgba(255,255,255,0.82);">Building dependable software, sharing what I learn, and turning complex problems into clear systems.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Jadir Ibna Hasan. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-to-top position-fixed rounded" id="scrollTop"><a class="text-center d-block rounded text-white" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var scrollTop = document.getElementById("scrollTop");
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) { scrollTop.classList.add("show"); } else { scrollTop.classList.remove("show"); }
+            });
+            var themeToggle = document.getElementById("themeToggle");
+            var themeIcon = themeToggle.querySelector("i");
+            function refreshThemeIcon() {
+                var dark = document.documentElement.getAttribute("data-bs-theme") === "dark";
+                themeIcon.className = dark ? "fa fa-sun-o" : "fa fa-moon-o";
+                themeToggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+            }
+            refreshThemeIcon();
+            themeToggle.addEventListener("click", function () {
+                var current = document.documentElement.getAttribute("data-bs-theme");
+                var next = current === "dark" ? "light" : "dark";
+                document.documentElement.setAttribute("data-bs-theme", next);
+                localStorage.setItem("theme", next);
+                refreshThemeIcon();
+            });
+        });
+    </script>
+</body>
+
+</html>

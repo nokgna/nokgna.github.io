@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Google Is Taking TPUs to Space: What Project Suncatcher Actually Means — Jadir Ibna Hasan</title>
+    <meta name="description" content="The viral headline is dramatic, but the real story is a careful engineering experiment—not a working data center in orbit.">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&amp;display=swap">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/styles.min.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <script>
+        (function () {
+            var stored = localStorage.getItem("theme");
+            var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            document.documentElement.setAttribute("data-bs-theme", stored || (prefersDark ? "dark" : "light"));
+        })();
+    </script>
+</head>
+
+<body id="page-top">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="navbar navbar-expand-lg fixed-top text-uppercase" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Jadir Ibna Hasan</a>
+            <button id="themeToggle" class="theme-toggle ms-auto me-2" aria-label="Toggle dark mode" title="Toggle dark mode"><i class="fa fa-moon-o"></i></button>
+            <button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler text-white rounded" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="../index.html#about">About</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="../index.html#experience">Experience</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="../index.html#work">Work</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="../index.html#skills">Skills</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="index.html">Writing</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <header class="article-hero text-center">
+            <div class="container">
+                <a class="back-link" href="index.html"><i class="fa fa-arrow-left me-1"></i>All writing</a>
+                <div class="mt-3"><span class="article-kicker">Engineering article · #AI</span></div>
+                <h1 class="article-title">Google Is Taking TPUs to Space: What Project Suncatcher Actually Means</h1>
+                <p class="article-sub">The viral headline is dramatic, but the real story is a careful engineering experiment—not a working data center in orbit.</p>
+                <div class="article-meta">Sep 2026 · 5 min read</div>
+                <div class="tags justify-content-center mt-3"><span class="tag">AI</span><span class="tag">Google</span><span class="tag">Infrastructure</span><span class="tag">Space</span></div>
+            </div>
+        </header>
+
+        <article class="article-body">
+            <p>A viral post claims that Google will launch Tensor Processing Units (TPUs) into space next week to test data centers in orbit. The central claim is real, but the headline compresses a much more grounded experiment into something that sounds like an immediate transformation of AI infrastructure.</p>
+
+            <p>On <strong>October 1, 2026</strong>, Google plans to send a small prototype satellite to low Earth orbit aboard SpaceX's Transporter-18 rideshare mission. Built with Planet Labs, the satellite will carry four Google TPUs and test how they behave through launch, radiation, and orbital temperature changes. The mission is part of <strong>Project Suncatcher</strong>, Google's long-term research program for solar-powered machine-learning infrastructure in space.</p>
+
+            <blockquote><p>This is a hardware experiment in orbit. It is not Google opening an AI data center in space next week.</p></blockquote>
+
+            <h2>What Google is actually launching</h2>
+            <p>The prototype is roughly the size of a refrigerator. Its four TPUs provide a limited amount of compute, closer to a small server configuration than the thousands of accelerators used by a terrestrial AI data center. The goal is to observe whether ordinary AI workloads can execute reliably in orbit and to identify failures that ground tests cannot fully reproduce.</p>
+            <p>Google says the first mission will focus on three hardware questions:</p>
+            <ul>
+                <li>Can the TPUs survive the vibration and acceleration of launch?</li>
+                <li>Can they tolerate radiation and rare bit flips without unacceptable errors?</li>
+                <li>Can heat pipes and radiators cool them in a vacuum?</li>
+            </ul>
+            <p>Ground testing has been encouraging. Google reports that vibration tests produced better-than-expected results and that proton-beam testing of its Trillium TPUs exceeded the accumulated ionizing dose expected during a five-year mission. Still, ground tests cannot reproduce every combination of launch stress, radiation, vacuum, and orbital thermal cycling. That is the value of the flight.</p>
+
+            <h2>Why put AI chips in orbit?</h2>
+            <p>The motivation begins with energy. AI accelerators consume substantial power and produce substantial heat. In an appropriate low Earth orbit, solar panels may receive more usable sunlight than comparable systems on the ground. Google has claimed that some orbital configurations could generate up to eight times more solar energy per year while reducing the need for large batteries.</p>
+            <p>That is an attractive systems constraint for a research program. It is also only one part of the equation. Solving compute in orbit does not remove the need for cooling, data movement, radiation protection, fault tolerance, or maintenance. It relocates those engineering problems rather than eliminating them.</p>
+
+            <h2>The hard part is heat</h2>
+            <p>Earth-based data centers use fans, pumps, and liquid cooling to move heat away from chips. None of those methods works naturally in a vacuum. An orbital accelerator must radiate heat into space through carefully designed thermal hardware.</p>
+            <p>Google is testing a system that transfers heat from the TPUs through thermal interface material, heat pipes, and radiators. Reporting on the mission says the initial hardware is expected to run the accelerators for only short bursts—roughly 15 minutes—before they must shut down to cool. Even if those figures change before launch, the direction is clear: cooling, not chip survival alone, may determine whether dense AI compute can operate continuously in orbit.</p>
+
+            <h2>A constellation would be a distributed system</h2>
+            <p>The long-term vision extends beyond one satellite. Google eventually wants clusters of spacecraft carrying dozens of TPUs each. Those satellites would need to exchange models, activations, intermediate results, and other data through high-bandwidth laser links while maintaining precise positions relative to one another.</p>
+            <p>That makes Project Suncatcher a distributed-systems problem in an unusually unforgiving environment. Network partitions, packet loss, component failures, and long maintenance windows are familiar production concerns in space. What changes is the recovery time: replacing a failed server on Earth may take hours; replacing a failed satellite may never be practical. Reliability must therefore be designed into the hardware, software, and network together.</p>
+            <p>Google says a two-satellite mission in 2027 will test laser communication. That milestone is more ambitious than the first flight because it will begin validating the idea of a coordinated orbital computer rather than only a processor in orbit.</p>
+
+            <h2>What the experiment could—and could not—prove</h2>
+            <p>A successful first launch would show that Google's accelerator hardware can survive the journey and run useful software in orbit. It could also produce better data about thermal design, radiation effects, and the operational reliability of a small orbital compute payload.</p>
+            <p>It would not prove that orbit is cheaper than terrestrial computing, that launch costs are low enough for routine deployment, or that satellites can be serviced economically. It would not eliminate the need to move large amounts of data from Earth. And one successful demonstration would say little about the reliability of thousands of coordinated spacecraft over years.</p>
+            <p>Google has described Suncatcher as a moonshot and says useful large-scale operation is still years away. That framing is appropriate: this is exploratory research, not a product launch.</p>
+
+            <h2>The engineering takeaway</h2>
+            <p>The interesting lesson is not that data centers are moving into space. It is that Google is testing whether a proven computing component can become a dependable system component under a completely new environment.</p>
+            <p>That pattern is familiar in software engineering. A library that works on a laptop may fail under concurrency, constrained memory, or intermittent networking. Likewise, a TPU that performs well in a terrestrial rack may encounter new failure modes after launch. The useful work lies in identifying those modes early, measuring them honestly, and feeding the results into the next design.</p>
+            <p>For now, the key questions to watch on October 1 are practical: Did the satellite deploy successfully? Can it maintain communications? Do the TPUs execute their test workload? How quickly do temperatures rise, and how well does the cooling system recover? The answers will be more informative than the viral headline.</p>
+
+            <h2>Sources and further reading</h2>
+            <ul>
+                <li><a href="https://x.com/ns123abc/status/2103143161727992118" target="_blank" rel="noopener">Original X post that prompted this analysis</a></li>
+                <li><a href="https://blog.google/innovation-and-ai/models-and-research/google-research/google-project-suncatcher-facts/" target="_blank" rel="noopener">Google: Behind Project Suncatcher, our moonshot to put AI in space</a></li>
+                <li><a href="https://www.reuters.com/business/media-telecom/google-plans-first-test-ai-chips-space-under-project-suncatcher-2026-09-24/" target="_blank" rel="noopener">Reuters: Google plans first test of AI chips in space</a></li>
+                <li><a href="https://arstechnica.com/google/2026/09/googles-first-suncatcher-orbital-data-center-test-launches-october-1/" target="_blank" rel="noopener">Ars Technica: Google's first Suncatcher orbital data center test launches October 1</a></li>
+            </ul>
+
+            <div class="article-footer">
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                    <a class="back-link" href="index.html"><i class="fa fa-arrow-left me-1"></i>All writing</a>
+                    <a class="btn btn-ak-outline" href="mailto:jadiribnahasan@gmail.com"><i class="fa fa-envelope me-2"></i>Discuss this article</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 mb-4 mb-lg-0">
+                    <h5 class="mb-3">Location</h5>
+                    <p class="mb-0" style="color: rgba(255,255,255,0.82);">Dhaka, Bangladesh</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-lg-0">
+                    <h5 class="mb-3">Around the Web</h5>
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a class="btn-social" role="button" href="https://github.com/jadiribnahasan" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa fa-github fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a class="btn-social" role="button" href="https://bd.linkedin.com/in/jadiribnahasan" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a class="btn-social" role="button" href="mailto:jadiribnahasan@gmail.com" aria-label="Email"><i class="fa fa-envelope fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a class="btn-social" role="button" href="https://angkon.cloud" target="_blank" rel="noopener" aria-label="Website"><i class="fa fa-globe fa-fw"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3">About</h5>
+                    <p class="mb-0" style="color: rgba(255,255,255,0.82);">Building dependable software, sharing what I learn, and turning complex problems into clear systems.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Jadir Ibna Hasan. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-to-top position-fixed rounded" id="scrollTop"><a class="text-center d-block rounded text-white" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var scrollTop = document.getElementById("scrollTop");
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) { scrollTop.classList.add("show"); } else { scrollTop.classList.remove("show"); }
+            });
+            var themeToggle = document.getElementById("themeToggle");
+            var themeIcon = themeToggle.querySelector("i");
+            function refreshThemeIcon() {
+                var dark = document.documentElement.getAttribute("data-bs-theme") === "dark";
+                themeIcon.className = dark ? "fa fa-sun-o" : "fa fa-moon-o";
+                themeToggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+            }
+            refreshThemeIcon();
+            themeToggle.addEventListener("click", function () {
+                var current = document.documentElement.getAttribute("data-bs-theme");
+                var next = current === "dark" ? "light" : "dark";
+                document.documentElement.setAttribute("data-bs-theme", next);
+                localStorage.setItem("theme", next);
+                refreshThemeIcon();
+            });
+        });
+    </script>
+</body>
+
+</html>
