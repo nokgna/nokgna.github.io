@@ -1206,3 +1206,81 @@ button:focus-visible,
 .work-icon {
   z-index: 2;
 }
+
+/* ---------- Project case study pages ---------- */
+.project-cover {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.25rem 2.5rem;
+}
+
+.project-cover img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: var(--ak-shadow);
+  display: block;
+}
+
+.project-cover--grad {
+  height: 240px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 3.2rem;
+  box-shadow: var(--ak-shadow);
+}
+
+.project-facts {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  border: 1px solid var(--ak-border);
+  border-radius: 12px;
+  padding: 1.1rem 1.4rem;
+  margin-bottom: 2.2rem;
+  background: var(--ak-surface);
+}
+
+.project-facts div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.project-facts span {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ak-muted);
+}
+
+.project-facts strong {
+  color: var(--ak-heading);
+}
+
+.eyebrow {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--ak-plum);
+  display: inline-block;
+  margin-bottom: 0.4rem;
+}
+
+.tech-panel {
+  border: 1px solid var(--ak-border);
+  border-radius: 12px;
+  padding: 1.1rem 1.4rem;
+  margin-top: 2.2rem;
+  background: var(--ak-surface);
+}
+
+.tech-panel > strong {
+  display: block;
+  color: var(--ak-heading);
+  margin-bottom: 0.7rem;
+}
