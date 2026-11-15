@@ -1284,3 +1284,207 @@ button:focus-visible,
   color: var(--ak-heading);
   margin-bottom: 0.7rem;
 }
+
+/* =====================================================================
+   Polish & mobile responsiveness
+   ===================================================================== */
+
+/* ---------- Navbar toggler & collapsed menu ---------- */
+#mainNav .navbar-toggler {
+  border: 1px solid rgba(250, 248, 235, 0.5);
+  padding: 0.35rem 0.65rem;
+  font-size: 1.05rem;
+  line-height: 1;
+  color: var(--ak-cream);
+}
+
+#mainNav .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(250, 248, 235, 0.3);
+}
+
+#mainNav .navbar-brand {
+  font-size: 1.15rem;
+}
+
+/* active / hover underline (desktop only) */
+@media (min-width: 992px) {
+  #mainNav .nav-link {
+    position: relative;
+  }
+  #mainNav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.45rem;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--ak-plum-soft);
+    opacity: 0;
+    transform: translateY(3px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  #mainNav .nav-link:hover::after,
+  #mainNav .nav-link.active::after {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* collapsed menu on mobile */
+@media (max-width: 991.98px) {
+  #mainNav .navbar-collapse {
+    border-top: 1px solid rgba(250, 248, 235, 0.16);
+    margin-top: 0.5rem;
+    padding: 0.75rem 0 1rem;
+  }
+  #mainNav .nav-link {
+    padding: 0.7rem 0.9rem !important;
+    border-radius: 8px;
+  }
+  #mainNav .nav-link:hover,
+  #mainNav .nav-link.active {
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+
+/* ---------- Hero polish ---------- */
+.hero-kicker .sep {
+  opacity: 0.5;
+  margin: 0 0.35rem;
+}
+
+.hero .btn {
+  min-width: 160px;
+}
+
+/* ---------- Global overflow safety ---------- */
+img {
+  max-width: 100%;
+}
+
+/* ---------- Blog tables: horizontal scroll on mobile ---------- */
+@media (max-width: 767.98px) {
+  .article-body table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ---------- Mobile spacing & sizing ---------- */
+@media (max-width: 767.98px) {
+  .hero {
+    padding-top: 112px;
+    padding-bottom: 48px;
+  }
+  .hero-avatar {
+    max-width: 160px;
+    border-width: 4px;
+  }
+  .hero h1 {
+    font-size: clamp(1.9rem, 9vw, 2.4rem);
+  }
+  .hero-title {
+    font-size: 1.05rem;
+  }
+  .hero-tagline {
+    font-size: 0.95rem;
+  }
+  .hero-stats {
+    margin-top: 1.6rem;
+  }
+  .stat-box {
+    padding: 0.85rem 0.4rem;
+  }
+  .stat-box .stat-num {
+    font-size: 1.5rem;
+  }
+  .stat-box .stat-label {
+    font-size: 0.72rem;
+  }
+  .orgs {
+    gap: 18px;
+    margin-top: 1.8rem;
+  }
+  .orgs .imgbs {
+    width: 118px;
+  }
+  .orgs .imguiu {
+    width: 118px;
+  }
+  .orgs .imgbuet {
+    width: 40px;
+  }
+
+  .section {
+    padding: 52px 0;
+  }
+
+  .contact-panel {
+    padding: 1.35rem;
+  }
+
+  .article-hero,
+  .blog-hero {
+    padding-top: 118px;
+    padding-bottom: 36px;
+  }
+  .article-title {
+    font-size: 1.65rem;
+  }
+  .article-sub {
+    font-size: 1.02rem;
+  }
+  .article-body {
+    padding: 2rem 1.1rem 3rem;
+  }
+  .article-body h2 {
+    font-size: 1.25rem;
+  }
+  .article-body p,
+  .article-body li {
+    font-size: 0.98rem;
+  }
+
+  .project-cover--grad {
+    height: 180px;
+    font-size: 2.6rem;
+  }
+
+  .exp-card {
+    padding: 1.25rem 1.1rem;
+  }
+  .timeline-item {
+    padding-left: 30px;
+  }
+
+  .philosophy-card,
+  .cap-card,
+  .skill-group,
+  .edu-card,
+  .repo-card,
+  .article-card {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero .btn {
+    width: 100%;
+  }
+  .contact-info-item {
+    gap: 0.7rem;
+  }
+  .contact-info-item .contact-icon {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+  }
+}
+
+/* ---------- Selection color ---------- */
+::selection {
+  background: var(--ak-plum);
+  color: #fff;
+}
