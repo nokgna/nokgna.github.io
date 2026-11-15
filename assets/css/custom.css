@@ -1754,3 +1754,63 @@ body.nav-open {
     margin-right: 0.5rem;
   }
 }
+
+/* =====================================================================
+   Agentic development showcase
+   ===================================================================== */
+.agentic-card {
+  background: var(--ak-surface);
+  border: 1px solid var(--ak-border);
+  border-radius: 16px;
+  padding: 1.6rem;
+  height: 100%;
+  box-shadow: 0 14px 34px -26px rgba(31, 34, 49, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.agentic-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 46px -24px rgba(31, 34, 49, 0.45);
+}
+
+.agentic-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 1.1rem;
+  box-shadow: 0 10px 22px -10px rgba(31, 34, 49, 0.5);
+}
+
+.agentic-icon--teal { background: linear-gradient(135deg, var(--ak-teal), var(--ak-teal-dark)); }
+.agentic-icon--plum { background: linear-gradient(135deg, var(--ak-plum), var(--ak-plum-soft)); }
+.agentic-icon--navy { background: linear-gradient(135deg, var(--ak-navy), var(--ak-teal)); }
+.agentic-icon--ink { background: linear-gradient(135deg, #2c3e50, #406b74); }
+
+.agentic-card h5 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  color: var(--ak-heading);
+  margin-bottom: 0.5rem;
+}
+
+.agentic-card p {
+  color: var(--ak-muted);
+  font-size: 0.94rem;
+  margin-bottom: 1rem;
+}
+
+.agentic-quote {
+  max-width: 720px;
+  margin: 2.5rem auto 0;
+  border-left: 4px solid var(--ak-plum);
+  background: rgba(163, 73, 139, 0.07);
+  border-radius: 0 12px 12px 0;
+  padding: 1.1rem 1.4rem;
+  font-style: italic;
+  color: var(--ak-muted);
+}
