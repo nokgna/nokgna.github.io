@@ -524,37 +524,7 @@
 
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/script.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var scrollTop = document.getElementById("scrollTop");
-            window.addEventListener("scroll", function () {
-                if (window.scrollY > 300) {
-                    scrollTop.classList.add("show");
-                } else {
-                    scrollTop.classList.remove("show");
-                }
-            });
-
-            var themeToggle = document.getElementById("themeToggle");
-            var themeIcon = themeToggle.querySelector("i");
-
-            function refreshThemeIcon() {
-                var dark = document.documentElement.getAttribute("data-bs-theme") === "dark";
-                themeIcon.className = dark ? "fa fa-sun-o" : "fa fa-moon-o";
-                themeToggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
-            }
-
-            refreshThemeIcon();
-
-            themeToggle.addEventListener("click", function () {
-                var current = document.documentElement.getAttribute("data-bs-theme");
-                var next = current === "dark" ? "light" : "dark";
-                document.documentElement.setAttribute("data-bs-theme", next);
-                localStorage.setItem("theme", next);
-                refreshThemeIcon();
-            });
-        });
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
