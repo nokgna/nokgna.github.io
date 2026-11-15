@@ -132,37 +132,37 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 /* ---------- Org logos ---------- */
 .orgs {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 32px;
-  margin-top: 2.5rem;
+  margin: 2.5rem 0 0;
 }
 
 .orgs img {
-  opacity: 0.82;
+  display: block;
+  margin: 0;
+  height: auto;
+  opacity: 1;
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .orgs img:hover {
-  opacity: 1;
+  opacity: 0.85;
   transform: translateY(-3px);
 }
 
 .orgs .imgbs {
   width: 150px;
-  height: auto;
 }
 
 .orgs .imgbuet {
   width: 46px;
-  height: auto;
 }
 
 .orgs .imguiu {
   width: 150px;
-  height: auto;
 }
 
 /* ---------- Buttons ---------- */
@@ -1416,6 +1416,9 @@ img {
   .orgs .imgbuet {
     width: 40px;
   }
+  [data-bs-theme="dark"] .orgs {
+    padding: 0.85rem 1.1rem;
+  }
 
   .section {
     padding: 52px 0;
@@ -1708,10 +1711,16 @@ img {
   }
 }
 
-/* Org logos: render as light monochrome in dark mode so they stay visible */
+/* Org logos: light pill in dark mode so original colors stay visible */
+[data-bs-theme="dark"] .orgs {
+  background: rgba(250, 248, 235, 0.97);
+  padding: 1rem 1.6rem;
+  border-radius: 16px;
+  box-shadow: 0 16px 36px -18px rgba(0, 0, 0, 0.55);
+}
+
 [data-bs-theme="dark"] .orgs img {
-  filter: brightness(0) invert(1);
-  opacity: 0.9;
+  opacity: 1;
 }
 
 /* =====================================================================
