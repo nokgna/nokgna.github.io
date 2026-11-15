@@ -1174,3 +1174,35 @@ button:focus-visible,
 [data-bs-theme="dark"] .article-body pre {
   background: #0d0f16;
 }
+
+/* ---------- Work card images ---------- */
+.work-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.work-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(31, 34, 49, 0.45) 0%, rgba(31, 34, 49, 0) 40%, rgba(31, 34, 49, 0) 55%, rgba(31, 34, 49, 0.4) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.work-index,
+.work-role-badge {
+  z-index: 2;
+}
+
+.work-index {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.work-icon {
+  z-index: 2;
+}
