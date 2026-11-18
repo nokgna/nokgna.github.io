@@ -68,6 +68,9 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 .hero-avatar {
   max-width: 220px;
   width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 25%;
   border: 6px solid #fff;
   border-radius: 50%;
   box-shadow: var(--ak-shadow);
@@ -155,6 +158,11 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 .orgs .imgbs {
   width: 150px;
+}
+
+.orgs .imgnewroz {
+  width: 48px;
+  mix-blend-mode: multiply;
 }
 
 .orgs .imgbuet {
@@ -1439,6 +1447,9 @@ img {
   .orgs .imgbs {
     width: 118px;
   }
+  .orgs .imgnewroz {
+    width: 40px;
+  }
   .orgs .imguiu {
     width: 118px;
   }
@@ -2046,16 +2057,10 @@ body.nav-open {
   object-fit: contain;
 }
 
-.exp-logo--monogram {
+.exp-logo--square {
   width: 48px;
   height: 48px;
-  border: 0;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 800;
-  font-size: 1rem;
-  letter-spacing: 0.02em;
-  color: #fff;
-  background: linear-gradient(135deg, var(--ak-plum), var(--ak-plum-soft));
+  padding: 0.35rem;
 }
 
 /* =====================================================================
