@@ -2130,52 +2130,75 @@ body.nav-open {
 }
 
 /* =====================================================================
-   Writing carousel
+   Writing carousel (Bootstrap-native slide)
    ===================================================================== */
 .writing-carousel {
-  padding-bottom: 2.25rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* Stack every slide in a single grid cell so the container height stays
-   stable and the crossfade overlaps cleanly (no layout reflow or jump). */
 .writing-carousel .carousel-inner {
-  display: grid;
+  border-radius: 22px;
+  box-shadow: 0 30px 65px -32px rgba(31, 34, 49, 0.45);
+}
+
+.writing-slide {
+  display: flex;
+  align-items: stretch;
+  background: var(--ak-surface);
+  border: 1px solid var(--ak-border);
+  border-radius: 22px;
   overflow: hidden;
 }
 
-.writing-carousel .carousel-item {
-  grid-area: 1 / 1;
-  float: none;
-  width: 100%;
-  margin: 0;
-  display: block;
-  padding: 0.25rem 0.5rem 1.1rem;
-  opacity: 0;
-  transform: none;
-  pointer-events: none;
-  transition: opacity 0.5s ease-in-out;
+.writing-slide-media {
+  flex: 0 0 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: #fff;
+  padding: 2rem 1.25rem;
+  text-align: center;
 }
 
-.writing-carousel .carousel-item.active {
-  opacity: 1;
-  pointer-events: auto;
-  z-index: 1;
+.writing-slide-media .fa {
+  font-size: 2.5rem;
+  opacity: 0.92;
 }
 
-/* incoming slide fades in */
-.writing-carousel .carousel-item-next.carousel-item-start,
-.writing-carousel .carousel-item-prev.carousel-item-end {
-  opacity: 1;
-  z-index: 2;
-  transition: opacity 0.5s ease-in-out;
+.writing-slide-index {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 2.4rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.5);
 }
 
-/* outgoing slide fades out at the same time (true crossfade) */
-.writing-carousel .active.carousel-item-start,
-.writing-carousel .active.carousel-item-end {
-  opacity: 0;
-  z-index: 1;
-  transition: opacity 0.5s ease-in-out;
+.writing-slide-body {
+  flex: 1;
+  padding: 2.25rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.writing-slide-body h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  color: var(--ak-heading);
+  font-size: 1.45rem;
+  line-height: 1.3;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.writing-slide-excerpt {
+  color: var(--ak-muted);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
 }
 
 .writing-carousel .carousel-indicators {
@@ -2209,11 +2232,11 @@ body.nav-open {
 }
 
 .writing-carousel .carousel-control-prev {
-  left: 0.5rem;
+  left: 0.6rem;
 }
 
 .writing-carousel .carousel-control-next {
-  right: 0.5rem;
+  right: 0.6rem;
 }
 
 .writing-ctrl-icon {
@@ -2238,21 +2261,6 @@ body.nav-open {
   transform: scale(1.06);
 }
 
-.writing-carousel .article-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.writing-carousel .article-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--ak-teal), var(--ak-plum));
-}
-
 /* =====================================================================
    Responsive tweaks for new components
    ===================================================================== */
@@ -2271,6 +2279,29 @@ body.nav-open {
   }
   .ach-item:last-child {
     border-bottom: 0;
+  }
+  .writing-slide {
+    flex-direction: column;
+  }
+  .writing-slide-media {
+    flex: 0 0 auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    text-align: left;
+  }
+  .writing-slide-media .fa {
+    font-size: 1.5rem;
+  }
+  .writing-slide-index {
+    font-size: 1.5rem;
+  }
+  .writing-slide-body {
+    padding: 1.5rem 1.4rem 1.7rem;
+  }
+  .writing-slide-body h3 {
+    font-size: 1.2rem;
   }
   .writing-carousel .carousel-control-prev,
   .writing-carousel .carousel-control-next {
