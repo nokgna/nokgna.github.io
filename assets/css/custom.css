@@ -2136,8 +2136,46 @@ body.nav-open {
   padding-bottom: 2.25rem;
 }
 
+/* Stack every slide in a single grid cell so the container height stays
+   stable and the crossfade overlaps cleanly (no layout reflow or jump). */
+.writing-carousel .carousel-inner {
+  display: grid;
+  overflow: hidden;
+}
+
 .writing-carousel .carousel-item {
-  padding: 0.25rem 0.5rem 1rem;
+  grid-area: 1 / 1;
+  float: none;
+  width: 100%;
+  margin: 0;
+  display: block;
+  padding: 0.25rem 0.5rem 1.1rem;
+  opacity: 0;
+  transform: none;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.writing-carousel .carousel-item.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+/* incoming slide fades in */
+.writing-carousel .carousel-item-next.carousel-item-start,
+.writing-carousel .carousel-item-prev.carousel-item-end {
+  opacity: 1;
+  z-index: 2;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* outgoing slide fades out at the same time (true crossfade) */
+.writing-carousel .active.carousel-item-start,
+.writing-carousel .active.carousel-item-end {
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .writing-carousel .carousel-indicators {
