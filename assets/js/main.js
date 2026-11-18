@@ -68,3 +68,14 @@
         }
     });
 })();
+
+// Initialize AOS scroll animations. The library is loaded via script.min.js but
+// never auto-starts, so without this every [data-aos] element stays at opacity:0.
+if (window.AOS) {
+    window.AOS.init({
+        once: true,
+        offset: 80,
+        duration: 700,
+        easing: "ease-out-cubic"
+    });
+}

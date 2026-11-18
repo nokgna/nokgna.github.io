@@ -78,20 +78,20 @@
         <div class="container">
             <h2 class="text-uppercase text-center section-heading" style="color: var(--ak-accent);">About</h2>
             <div class="divider text-center"><i class="fa fa-star"></i></div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <p class="section-sub">Engineering is a craft, not just an output. I turn ambiguous requirements into software that is understandable, testable, and built to evolve.</p>
+            <div class="bio-panel" data-aos="fade-up">
+                <span class="bio-mark"><i class="fa fa-quote-left"></i></span>
+                <div class="bio-eyebrow">About me</div>
+                <p class="bio-lead">Engineering is a craft, not just an output. I turn ambiguous requirements into software that is understandable, testable, and built to evolve.</p>
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <p class="about-para mb-0">Dedicated and results-oriented professional with extensive experience in architecting complex enterprise solutions. I enjoy turning complex requirements into dependable software and creating solutions that bring value and confidence to the people who use them.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <p class="about-para mb-0">My engineering work spans Odoo customization, Python services, databases, data collection, concurrent systems, and applied machine-learning. I care about systems that are understandable in production—not only prototypes that demonstrate a result once.</p>
+                    </div>
                 </div>
             </div>
-            <div class="row justify-content-center mt-2">
-                <div class="col-lg-5">
-                    <p class="about-para">Dedicated and results-oriented professional with extensive experience in architecting complex enterprise solutions. I enjoy turning complex requirements into dependable software and creating solutions that bring value and confidence to the people who use them.</p>
-                </div>
-                <div class="col-lg-5">
-                    <p class="about-para">My engineering work spans Odoo customization, Python services, databases, data collection, concurrent systems, and applied machine-learning. I care about systems that are understandable in production—not only prototypes that demonstrate a result once.</p>
-                </div>
-            </div>
-            <div class="row mt-4 g-3">
+            <div class="row mt-5 g-3">
                 <div class="col-md-3"><div class="philosophy-card" data-aos="fade-up" data-aos-delay="0"><h5>Focus</h5><p>Reliable product engineering</p></div></div>
                 <div class="col-md-3"><div class="philosophy-card" data-aos="fade-up" data-aos-delay="80"><h5>Approach</h5><p>Ownership from design to delivery</p></div></div>
                 <div class="col-md-3"><div class="philosophy-card" data-aos="fade-up" data-aos-delay="160"><h5>Collaboration</h5><p>Clear communication, shared context</p></div></div>
@@ -131,7 +131,8 @@
                         <div class="exp-company">Newroz Technologies Limited · Dhaka, Bangladesh</div>
                         <div class="exp-meta">May 2025 — Feb 2026 · Full-time</div>
                         <ul class="exp-list">
-                            <li>Led an Odoo team</li>
+                            <li>Led an Odoo development team, overseeing project delivery and code quality</li>
+                            <li>Coordinated requirement breakdown, task assignment, and team reviews</li>
                         </ul>
                         <div class="tags"><span class="tag">Python</span><span class="tag">Odoo</span><span class="tag">JavaScript</span><span class="tag">Docker</span></div>
                     </div>
@@ -397,26 +398,45 @@
             <div class="row g-4 mb-4">
                 <div class="col-md-6" data-aos="fade-up">
                     <div class="edu-card">
-                        <h5>Bangladesh University of Engineering and Technology</h5>
-                        <div class="edu-degree">MSc · Computer Science</div>
+                        <div class="edu-head">
+                            <span class="edu-logo"><img src="assets/img/BUET_LOGO.svg" alt="BUET logo"></span>
+                            <div>
+                                <h5 class="mb-1">Bangladesh University of Engineering and Technology</h5>
+                                <div class="edu-degree">MSc · Computer Science</div>
+                            </div>
+                        </div>
                         <p class="mb-1" style="color: var(--ak-muted);">Postgraduate study in Computer Science with coursework in Python and multithreading.</p>
                         <div class="tags mt-2"><span class="tag">Python</span><span class="tag">Multithreading</span></div>
                     </div>
                 </div>
                 <div class="col-md-6" data-aos="fade-up" data-aos-delay="80">
                     <div class="edu-card">
-                        <h5>United International University</h5>
-                        <div class="edu-degree">Bachelor of Science (BS) · Computer Science</div>
+                        <div class="edu-head">
+                            <span class="edu-logo edu-logo--wide"><img src="assets/img/header-logo.png" alt="United International University logo"></span>
+                            <div>
+                                <h5 class="mb-1">United International University</h5>
+                                <div class="edu-degree">Bachelor of Science (BS) · Computer Science</div>
+                            </div>
+                        </div>
                         <p class="mb-1" style="color: var(--ak-muted);">Dec 2021 · Grade 3.90 — Active member of the UIU App Forum.</p>
                         <div class="tags mt-2"><span class="tag">Python</span><span class="tag">C</span></div>
                     </div>
                 </div>
             </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3" data-aos="fade-up"><div class="credential-item"><i class="fa fa-github"></i><div><h6>GitHub Pull Shark</h6><p>Recognized for pull-request contribution activity.</p></div></div></div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="80"><div class="credential-item"><i class="fa fa-archive"></i><div><h6>Arctic Code Vault Contributor</h6><p>Code preserved in the GitHub Arctic Code Vault program.</p></div></div></div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="160"><div class="credential-item"><i class="fa fa-database"></i><div><h6>DataCamp</h6><p>Understanding Data Engineering · Jan 2025</p></div></div></div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="240"><div class="credential-item"><i class="fa fa-cloud"></i><div><h6>IBM</h6><p>Introduction to Cloud Computing · Apr 2021</p></div></div></div>
+            <div class="achievements-panel" data-aos="fade-up">
+                <div class="achievements-head">
+                    <span class="ach-head-icon"><i class="fa fa-trophy"></i></span>
+                    <div>
+                        <div class="ach-eyebrow">Achievements &amp; Recognition</div>
+                        <p class="mb-0">Credentials and milestones collected along the way.</p>
+                    </div>
+                </div>
+                <div class="row achievements-grid g-0">
+                    <div class="col-md-6 ach-item"><span class="ach-badge ach-badge--teal"><i class="fa fa-github"></i></span><div><h6>GitHub Pull Shark</h6><p>Recognized for pull-request contribution activity.</p></div></div>
+                    <div class="col-md-6 ach-item"><span class="ach-badge ach-badge--navy"><i class="fa fa-archive"></i></span><div><h6>Arctic Code Vault Contributor</h6><p>Code preserved in the GitHub Arctic Code Vault program.</p></div></div>
+                    <div class="col-md-6 ach-item"><span class="ach-badge ach-badge--plum"><i class="fa fa-database"></i></span><div><h6>DataCamp</h6><p>Understanding Data Engineering · Jan 2025</p></div></div>
+                    <div class="col-md-6 ach-item"><span class="ach-badge ach-badge--teal"><i class="fa fa-cloud"></i></span><div><h6>IBM</h6><p>Introduction to Cloud Computing · Apr 2021</p></div></div>
+                </div>
             </div>
             <div class="row g-4 mt-4">
                 <div class="col-12" data-aos="fade-up">
@@ -491,62 +511,84 @@
         <div class="container">
             <h2 class="text-uppercase text-center section-heading" style="color: var(--ak-accent);">Writing</h2>
             <div class="divider text-center"><i class="fa fa-star"></i></div>
-            <p class="text-center section-sub mb-5">Practical writing about software architecture, security boundaries, framework internals, and production engineering.</p>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4" data-aos="fade-up">
-                    <a class="article-card" href="blog/9-google-is-taking-tpus-to-space-what-project-suncatcher-actually-means.html">
-                        <div class="article-meta">Sep 2026 · 5 min read</div>
-                        <h5>Google Is Taking TPUs to Space: What Project Suncatcher Actually Means</h5>
-                        <p class="article-excerpt">The viral headline is dramatic, but the real story is a careful engineering experiment—not a working data center in orbit.</p>
-                        <div class="tags mt-3"><span class="tag">AI</span><span class="tag">Google</span><span class="tag">Infrastructure</span></div>
-                        <div class="article-read mt-3"><span>Read article</span> <i class="fa fa-arrow-right"></i></div>
-                    </a>
+            <p class="text-center section-sub mb-4">Practical writing about software architecture, security boundaries, framework internals, and production engineering.</p>
+            <div id="writingCarousel" class="carousel slide carousel-fade writing-carousel" data-bs-ride="carousel" data-bs-interval="6000" data-bs-touch="true" data-aos="fade-up">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#writingCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Articles 1–3"></button>
+                    <button type="button" data-bs-target="#writingCarousel" data-bs-slide-to="1" aria-label="Articles 4–6"></button>
                 </div>
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
-                    <a class="article-card" href="blog/8-what-is-pgvector-integration-in-odoo-20.html">
-                        <div class="article-meta">Sep 2026 · 3 min read</div>
-                        <h5>What Is pgvector Integration in Odoo 20?</h5>
-                        <p class="article-excerpt">A simple look at how Odoo uses PostgreSQL vectors to search business knowledge with AI.</p>
-                        <div class="tags mt-3"><span class="tag">AI</span><span class="tag">Odoo</span><span class="tag">Production</span></div>
-                        <div class="article-read mt-3"><span>Read article</span> <i class="fa fa-arrow-right"></i></div>
-                    </a>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row g-4">
+                            <div class="col-lg-4">
+                                <a class="article-card" href="blog/9-google-is-taking-tpus-to-space-what-project-suncatcher-actually-means.html">
+                                    <div class="article-meta">Sep 2026 · 5 min read</div>
+                                    <h5>Google Is Taking TPUs to Space: What Project Suncatcher Actually Means</h5>
+                                    <p class="article-excerpt">The viral headline is dramatic, but the real story is a careful engineering experiment—not a working data center in orbit.</p>
+                                    <div class="tags mt-3"><span class="tag">AI</span><span class="tag">Google</span><span class="tag">Infrastructure</span></div>
+                                    <div class="article-read mt-3"><span>Read article</span> <i class="fa fa-arrow-right"></i></div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4">
+                                <a class="article-card" href="blog/8-what-is-pgvector-integration-in-odoo-20.html">
+                                    <div class="article-meta">Sep 2026 · 3 min read</div>
+                                    <h5>What Is pgvector Integration in Odoo 20?</h5>
+                                    <p class="article-excerpt">A simple look at how Odoo uses PostgreSQL vectors to search business knowledge with AI.</p>
+                                    <div class="tags mt-3"><span class="tag">AI</span><span class="tag">Odoo</span><span class="tag">Production</span></div>
+                                    <div class="article-read mt-3"><span>Read article</span> <i class="fa fa-arrow-right"></i></div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4">
+                                <a class="article-card" href="blog/7-using-odoo-s-db-replica-host-for-a-high-availability-database.html">
+                                    <div class="article-meta">Sep 2026 · 5 min read</div>
+                                    <h5>Using Odoo's --db_replica_host for a High-Availability Database</h5>
+                                    <p class="article-excerpt">How read replicas, Odoo 20 database controls, and a reliable PostgreSQL topology work together.</p>
+                                    <div class="tags mt-3"><span class="tag">DevOps</span><span class="tag">Odoo</span><span class="tag">Production</span></div>
+                                    <div class="article-read mt-3"><span>Read article</span> <i class="fa fa-arrow-right"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row g-4">
+                            <div class="col-lg-4">
+                                <a class="article-card" href="blog/3-what-i-learned-structuring-an-odoo-19-custom-addon.html">
+                                    <div class="article-meta">Sep 2026 · 2 min read</div>
+                                    <h5>What I Learned Structuring an Odoo 19 Custom Addon</h5>
+                                    <p class="article-excerpt">Models, access rules, editor UX, and a read-only delivery endpoint are one system—not four unrelated files.</p>
+                                    <div class="tags mt-3"><span class="tag">Architecture</span><span class="tag">Odoo</span><span class="tag">Python</span></div>
+                                    <div class="article-read mt-3"><span>Read article</span> <i class="fa fa-arrow-right"></i></div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4">
+                                <a class="article-card" href="blog/4-a-practical-docker-compose-topology-for-odoo-and-astro.html">
+                                    <div class="article-meta">Sep 2026 · 2 min read</div>
+                                    <h5>A Practical Docker Compose Topology for Odoo and Astro</h5>
+                                    <p class="article-excerpt">Private services, automatic TLS, health checks, persistent volumes, and a clean path to backup and restore.</p>
+                                    <div class="tags mt-3"><span class="tag">DevOps</span><span class="tag">Docker</span><span class="tag">Production</span></div>
+                                    <div class="article-read mt-3"><span>Read article</span> <i class="fa fa-arrow-right"></i></div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4">
+                                <a class="article-card" href="blog/2-designing-a-safe-astro-odoo-content-boundary.html">
+                                    <div class="article-meta">Sep 2026 · 2 min read</div>
+                                    <h5>Designing a Safe Astro–Odoo Content Boundary</h5>
+                                    <p class="article-excerpt">How to keep an editorial backend powerful without leaking credentials or unpublished records.</p>
+                                    <div class="tags mt-3"><span class="tag">Astro</span><span class="tag">Odoo</span><span class="tag">Security</span></div>
+                                    <div class="article-read mt-3"><span>Read article</span> <i class="fa fa-arrow-right"></i></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
-                    <a class="article-card" href="blog/7-using-odoo-s-db-replica-host-for-a-high-availability-database.html">
-                        <div class="article-meta">Sep 2026 · 5 min read</div>
-                        <h5>Using Odoo's --db_replica_host for a High-Availability Database</h5>
-                        <p class="article-excerpt">How read replicas, Odoo 20 database controls, and a reliable PostgreSQL topology work together.</p>
-                        <div class="tags mt-3"><span class="tag">DevOps</span><span class="tag">Odoo</span><span class="tag">Production</span></div>
-                        <div class="article-read mt-3"><span>Read article</span> <i class="fa fa-arrow-right"></i></div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4" data-aos="fade-up">
-                    <a class="article-card" href="blog/3-what-i-learned-structuring-an-odoo-19-custom-addon.html">
-                        <div class="article-meta">Sep 2026 · 2 min read</div>
-                        <h5>What I Learned Structuring an Odoo 19 Custom Addon</h5>
-                        <p class="article-excerpt">Models, access rules, editor UX, and a read-only delivery endpoint are one system—not four unrelated files.</p>
-                        <div class="tags mt-3"><span class="tag">Architecture</span><span class="tag">Odoo</span><span class="tag">Python</span></div>
-                        <div class="article-read mt-3"><span>Read article</span> <i class="fa fa-arrow-right"></i></div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
-                    <a class="article-card" href="blog/4-a-practical-docker-compose-topology-for-odoo-and-astro.html">
-                        <div class="article-meta">Sep 2026 · 2 min read</div>
-                        <h5>A Practical Docker Compose Topology for Odoo and Astro</h5>
-                        <p class="article-excerpt">Private services, automatic TLS, health checks, persistent volumes, and a clean path to backup and restore.</p>
-                        <div class="tags mt-3"><span class="tag">DevOps</span><span class="tag">Docker</span><span class="tag">Production</span></div>
-                        <div class="article-read mt-3"><span>Read article</span> <i class="fa fa-arrow-right"></i></div>
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
-                    <a class="article-card" href="blog/2-designing-a-safe-astro-odoo-content-boundary.html">
-                        <div class="article-meta">Sep 2026 · 2 min read</div>
-                        <h5>Designing a Safe Astro–Odoo Content Boundary</h5>
-                        <p class="article-excerpt">How to keep an editorial backend powerful without leaking credentials or unpublished records.</p>
-                        <div class="tags mt-3"><span class="tag">Astro</span><span class="tag">Odoo</span><span class="tag">Security</span></div>
-                        <div class="article-read mt-3"><span>Read article</span> <i class="fa fa-arrow-right"></i></div>
-                    </a>
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#writingCarousel" data-bs-slide="prev">
+                    <span class="writing-ctrl-icon" aria-hidden="true"><i class="fa fa-chevron-left"></i></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#writingCarousel" data-bs-slide="next">
+                    <span class="writing-ctrl-icon" aria-hidden="true"><i class="fa fa-chevron-right"></i></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
             <div class="text-center mt-4">
                 <a class="btn btn-ak-outline" href="blog/index.html"><i class="fa fa-newspaper-o me-2"></i>Browse the journal</a>
